@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        img{
+            max-width: 50px;
+            max-height: 50px;
+        }
+        i {
+            padding: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row form-group">
+            <div class="col-md-4">
+                <form id="frm-car" onsubmit="event.preventDefault()">
+                    <h2 class="text-center">Datos Coche</h2>
+                    <div class="form-group">
+                        <label for="brand">Marca</label>
+                        <input type="hidden" name="id" id="id">
+                        <input type="text" name="brand" id="brand" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Modelo</label>
+                        <input type="text" name="model" id="model" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="colour">Color</label>
+                        <input type="text" name="colour" id="colour" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Año</label>
+                        <input type="text" name="year" id="year" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Precio</label>
+                        <input type="text" name="price" id="price" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Imagen</label>
+                        <input type="text" name="image" id="image" class="form-control">
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="button" class="btn btn-info" onclick="addCar()">Guardar</button>
+                        <button type="button" class="btn btn-info d-none" onclick="saveModificationCar()">Modificar</button>
+                        <button type="button" class="btn btn-danger d-none" onclick="cancelModificationCar()">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8 table">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">Marca</th>
+                          <th scope="col">Modelo</th>
+                          <th scope="col">Color</th>
+                          <th scope="col">Año</th>
+                          <th scope="col">Precio</th>
+                          <th scope="col">Imagen</th>
+                          <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="container-cards">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
